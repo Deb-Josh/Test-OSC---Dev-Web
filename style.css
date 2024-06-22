@@ -1,0 +1,130 @@
+:root{
+    --bg1: rgb(0, 100, 255);
+    --bg2: rgb(255, 0, 34);
+    --bg3: rgb(239, 245, 255);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px gray;
+    border-radius: 0 0 5px 5px;
+    padding-block: 15px;
+    background: var(--bg3);
+    z-index: 1;
+}
+
+header h1{
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 5px;
+    color: transparent;
+    background: linear-gradient(-45deg, var(--bg1) 8%, #fff, var(--bg1) 12%);
+    background-clip: text;
+    background-size: 200%;
+    animation: moveGradient 2s linear infinite;
+}
+
+@keyframes moveGradient {
+    to{
+        background-position: -200%;
+    }
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+form select{
+    font-size: 16px;
+    outline: none;
+    border: 2px solid var(--bg1);
+    border-radius: 10px;
+    padding: 6px 10px;
+}
+
+main{
+    min-height: 58vh;
+}
+main>.restaurant-grid{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+main>.restaurant-grid>div{
+    width: 200px;
+    padding-bottom: 5px;
+    box-shadow: 0 0 5px gray;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+main>.restaurant-grid>div:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 6px gray;
+}
+
+main>.restaurant-grid>div>img{
+    width: 100%;
+    height: 150px;
+}
+
+main>.restaurant-grid>div>h3{
+    color: transparent;
+    background: linear-gradient(45deg, var(--bg2) 8%, #fff, var(--bg2) 50%);
+    background-clip: text;
+    background-size: 200%;
+    animation: moveGradient 3s linear infinite;
+}
+
+main>.restaurant-grid>div>p{
+    font-family: sans-serif;
+    text-align: justify;
+    margin-inline: 5px;
+    padding: 5px;
+    font-style: italic;
+    border-top: 1px dashed var(--bg1);
+    background: #eee9;
+    border-radius: 0 0 15px 15px;
+}
+
+footer{
+    margin-top: 50px;
+    padding-inline:20px;
+    border-radius: 10px 10px 0 0;
+    background: var(--bg1);
+}
+
+footer p{
+    color: white;
+    text-align: center;
+    padding-block: 20px 10px;
+}
+footer p:nth-child(1){
+    font-style: italic;
+}
+footer p:nth-child(2){
+    border-top: 1px solid;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
